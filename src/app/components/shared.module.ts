@@ -39,7 +39,14 @@ import { TeamComponent } from './team/team.component';
     ClientComponent,
     SwitcherComponent,
     ScrollspyDirective,
-    FooterComponent
+    FooterComponent,
+    ContactComponent,
+    FaqComponent,
+    FeaturesComponent,
+    PricingComponent,
+    ServicesComponent,
+    CtaComponent,
+    TeamComponent
   ]
 })
 export class SharedModule {
