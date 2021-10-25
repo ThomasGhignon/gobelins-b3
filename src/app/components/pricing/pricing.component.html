@@ -14,7 +14,8 @@
       <!-- FIXME use *ngFor + array of datas in component + ngClass-->
       <!-- FIXME (option) ngClass explore true/false resolution-->
       <div class="col-lg-4" *ngFor="let item of pricingData">
-        <div class="bg-white price-box text-center mt-3">
+        <div class="bg-white price-box text-center mt-3" [ngClass]="{'active': item.isActive === true}">
+        <!--<div class="bg-white price-box text-center mt-3" [ngClass]="getClass(item)">-->
           <div class="plan-price fw-bold">
             <h1 class="mb-0 fw-bold">{{item.price}}</h1>
             <p class="mb-0">Per Month</p>
