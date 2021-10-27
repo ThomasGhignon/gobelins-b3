@@ -37,7 +37,7 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
     // D'autres existent, voir https://angular.io/guide/lifecycle-hooks
     const html = document.getElementById('homeTitleId');
     if (html){
-      const textArray = ['I would be delighted if the sea were full of cucumber juice.', 'I love bacon, beer, birds, and baboons.', 'Potato wedges probably are not best for relationships.']
+      const textArray = ['I would be delighted if the sea were full of cucumber.', 'I love bacon, beer, birds, and baboons.', 'Potato wedges probably are not best.']
       let i=0;
       this.timerInterval=setInterval(()=>{
         html.innerHTML=textArray[i];
