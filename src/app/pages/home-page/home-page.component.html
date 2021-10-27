@@ -77,9 +77,9 @@
   </section>
   <!-- END HOME -->
 
-  <app-services></app-services>
+  <app-services (changeFeaturesTitleEvent)="onEmitChangeFeaturesTitleEvent($event)"></app-services>
 
-  <app-features></app-features>
+  <app-features [changeFeaturesTitle]="changeFeaturesTitle"></app-features>
 
   <!-- note : client est un selector, il permet de charger le component ainsi que son html & css -->
   <client></client>

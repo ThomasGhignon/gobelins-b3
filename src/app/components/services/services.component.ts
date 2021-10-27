@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-services',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ServicesComponent implements OnInit {
 
   servicesData: any[];
+
+  @Output() changeFeaturesTitleEvent = new EventEmitter<string>();
 
   constructor() {
     this.servicesData = [
@@ -45,6 +47,11 @@ export class ServicesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  emitChangeFeaturesTitleEvent(event:string){
+    this.changeFeaturesTitleEvent.emit(event);
+    console.log('emitChangeFeaturesTitleEvent = ' + event )
   }
 
 }

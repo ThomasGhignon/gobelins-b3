@@ -107,4 +107,12 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.changeDetectorRef.detectChanges();
   }
+
+  changeFeaturesTitle:string = 'Our Features';
+
+  onEmitChangeFeaturesTitleEvent(event: string) {
+    console.log('onEmitChangeFeaturesTitleEvent = ' + event )
+    this.changeFeaturesTitle = event;
+    this.changeDetectorRef.detectChanges();
+  }
 }
