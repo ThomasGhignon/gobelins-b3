@@ -1,4 +1,6 @@
+import { DOCUMENT } from '@angular/common';
 import {AfterViewInit, Component, Inject, OnDestroy, OnInit} from '@angular/core';
+import {clear} from "tsparticles";
 
 @Component({
   selector: 'home-page', //selecteur html pour appeler le compo
@@ -12,8 +14,10 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // variables et functions convention de nomage camelCase
   currentSection = 'home-page';
+  timerInterval:any;
 
-  constructor() {
+  constructor(@Inject(DOCUMENT) private readonly document: Document) {
+
     // exécuté en premier !
 
     // exemple de log à checker dans la console du navigateur
@@ -31,6 +35,18 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
     // exécuté automatiquement après l'initialisation de la vue
     // obligatoire si implements AfterViewInit (qui est facultatif)
     // D'autres existent, voir https://angular.io/guide/lifecycle-hooks
+    const html = document.getElementById('homeTitleId');
+    if (html){
+      const textArray = ['I would be delighted if the sea were full of cucumber juice.', 'I love bacon, beer, birds, and baboons.', 'Potato wedges probably are not best for relationships.']
+      let i=0;
+      this.timerInterval=setInterval(()=>{
+        html.innerHTML=textArray[i];
+        i++;
+        if (i>2){
+          i=0;
+        }
+      }, 2500);
+    }
   }
 
   // Toujours utiliser public ou private pour les fonctions, variables , constantes ...
@@ -76,6 +92,8 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
     // obligatoire si implements OnDestroy (qui est facultatif)
     // Important : Si on a souscrit à des abonnements, se désabonner ici pour éviter les fuites de mémoires
     // D'autres existent, voir https://angular.io/guide/lifecycle-hooks
+
+    clearInterval(this.timerInterval);
   }
 
 }
