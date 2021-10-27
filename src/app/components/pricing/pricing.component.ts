@@ -38,15 +38,6 @@ export class PricingComponent implements OnInit {
     ];
   }
 
-  /*getClass(item:any): string{
-    if (item.isActive === true){
-      return 'active';
-    }else {
-      return '';
-    }
-
-  }*/
-
   ngOnInit(): void {
   }
 

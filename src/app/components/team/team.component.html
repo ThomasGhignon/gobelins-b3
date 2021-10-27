@@ -11,8 +11,8 @@
     </div>
     <div class="row mt-5">
       <!-- FIXME use *ngFor -->
-      <div class="col-lg-4" *ngFor="let item of teamData">
-        <div class="text-center bg-white team-box mt-3 p-5">
+      <div class="col-lg-4" *ngFor="let item of teamMemberList">
+        <div class="text-center bg-white team-box mt-3 p-5" [ngClass]="{'active': item.isActive === true}">
           <div class="">
             <img src="{{item.img}}" alt=""
                  class="img-fluid rounded-circle mx-auto d-block">

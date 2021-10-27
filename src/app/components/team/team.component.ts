@@ -7,24 +7,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamComponent implements OnInit {
 
-  teamData: any[];
+  teamMemberList: any[];
 
   constructor() {
-    this.teamData = [
+    this.teamMemberList = [
       {
         img: '../../../../../assets/images/team/team-3.png',
         name:'@Donald Laughlin',
         content: 'You want customer to your store. Easily your coupans and has\n Clooger.',
+        isActive: false,
+        links: {
+          github: '#',
+          skype: '#',
+          twitter: '#',
+        },
       },
       {
         img: '../../../../../assets/images/team/team-2.png',
         name:'@Rigoberto Valenza',
         content: 'You want customer to your store. Easily your coupans and has\n Clooger.',
+        isActive: false,
+        links: {
+          github: '#',
+          skype: '#',
+          twitter: '#',
+        },
       },
       {
         img: '../../../../../assets/images/team/team-1.png',
         name:'@Venessa Smith',
         content: 'You want customer to your store. Easily your coupans and has\n Clooger.',
+        isActive: true,
+        links: {
+          github: '#',
+          skype: '#',
+          twitter: '#',
+        },
       }
     ];
   }
