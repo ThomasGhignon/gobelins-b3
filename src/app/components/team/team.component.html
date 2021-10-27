@@ -22,7 +22,7 @@
             <p class="text-muted mt-4">{{item.content}}</p>
           </div>
           <div class="">
-            <app-team-networks [item]="item.links"></app-team-networks>
+            <app-team-networks *ngIf="toggleSocialLinks" [item]="item.links"></app-team-networks>
           </div>
         </div>
       </div>

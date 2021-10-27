@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import {AfterViewInit, Component, Inject, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, Inject, Input, OnDestroy, OnInit} from '@angular/core';
 import {clear} from "tsparticles";
 
 @Component({
@@ -16,7 +16,8 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
   currentSection = 'home-page';
   timerInterval:any;
 
-  constructor(@Inject(DOCUMENT) private readonly document: Document) {
+  constructor(@Inject(DOCUMENT) private readonly document: Document, private readonly changeDetectorRef: ChangeDetectorRef) {
+
 
     // exécuté en premier !
 
@@ -96,4 +97,14 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
     clearInterval(this.timerInterval);
   }
 
+  toggleSocialLinks:boolean = true;
+
+  onEmitToggleSocialLinksEvent(event: boolean) {
+    if (this.toggleSocialLinks === false){
+      this.toggleSocialLinks = !event;
+    }else{
+      this.toggleSocialLinks = event;
+    }
+    this.changeDetectorRef.detectChanges();
+  }
 }

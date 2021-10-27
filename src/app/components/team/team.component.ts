@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectorRef, Component, Inject, Input, OnInit, SimpleChanges} from '@angular/core';
 import {TeamMemberModel} from "../../models/team-member-model";
 import {TeamMemberLinksModel} from "../../models/team-member-links-model";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-team',
@@ -11,7 +12,9 @@ export class TeamComponent implements OnInit {
 
   teamMemberList: any[];
 
-  constructor() {
+  @Input() toggleSocialLinks : boolean;
+
+  constructor(@Inject(DOCUMENT) private readonly document: Document, private readonly changeDetectorRef: ChangeDetectorRef) {
     this.teamMemberList = [
       new TeamMemberModel({
         img: '../../../../../assets/images/team/team-3.png',
@@ -50,6 +53,11 @@ export class TeamComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.changeDetectorRef.detectChanges();
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    this.changeDetectorRef.detectChanges();
   }
 
 }
