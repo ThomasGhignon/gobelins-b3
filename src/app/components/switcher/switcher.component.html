@@ -8,33 +8,21 @@
 
 <!-- Style switcher -->
 <!-- FIXME add condition on style depending on if its open or not-->
-<div id="style-switcher">
+<div id="style-switcher" [ngClass]="{'isVisible': panel_isVisible === true}">
     <div>
         <h3>Select your color</h3>
       <!-- FIXME *ngFor with function 's call on click button -->
         <ul class="pattern">
-            <li>
-                <a class="color1 nav-link-pointer" ></a>
-            </li>
-            <li>
-                <a class="color2 nav-link-pointer" ></a>
-            </li>
-            <li>
-                <a class="color3 nav-link-pointer"></a>
-            </li>
-            <li>
-                <a class="color4 nav-link-pointer" ></a>
-            </li>
-            <li>
-                <a class="color5 nav-link-pointer" ></a>
-            </li>
-            <li>
-                <a class="color6 nav-link-pointer" ></a>
+            <!--<li *ngFor="let item of themeList">
+                <a class="{{item.class}} nav-link-pointer" (click)="setTheme(item.attr.toString())"></a>
+            </li>-->
+            <li *ngFor="let item of themeList; let i=index">
+                <a class="nav-link-pointer" [ngClass]="'color'+(i+1)" (click)="setTheme(item)"></a>
             </li>
         </ul>
     </div>
     <div class="bottom">
-        <a class="settings">
+        <a class="settings" (click)="colorParamPanel()">
           <i class="ti-settings ti-spin"></i>
         </a>
     </div>
