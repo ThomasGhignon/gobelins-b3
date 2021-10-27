@@ -20,8 +20,8 @@ export class TeamComponent implements OnInit {
         isActive: true,
         links: new TeamMemberLinksModel({
           github: '#',
-          skype: '#',
-          twitter: '#',
+          skype: '',
+          twitter: '',
         }),
       }),
       new TeamMemberModel({
@@ -31,7 +31,7 @@ export class TeamComponent implements OnInit {
         isActive: false,
         links: new TeamMemberLinksModel({
           github: '#',
-          skype: '#',
+          skype: '',
           twitter: '#',
         }),
       }),
@@ -41,7 +41,7 @@ export class TeamComponent implements OnInit {
         content: 'You want customer to your store. Easily your coupans and has\n Clooger.',
         isActive: true,
         links: new TeamMemberLinksModel({
-          github: '#',
+          github: '',
           skype: '#',
           twitter: '#',
         }),

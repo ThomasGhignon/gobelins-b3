@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {TeamMemberLinksModel} from "../../../models/team-member-links-model";
 
 @Component({
   selector: 'app-team-networks',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team-networks.component.css']
 })
 export class TeamNetworksComponent implements OnInit {
-
-  constructor() { }
+  @Input()item: TeamMemberLinksModel;
+  constructor() {
+  }
 
   ngOnInit(): void {
+    console.log(this.item);
   }
 
 }
