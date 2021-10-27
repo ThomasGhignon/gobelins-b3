@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
 
+  content = 'You want customer to your store. Easily publish your coupans and\n when a user has manage to catch one of your coupens, the coupens wil be deducted\n from your coupens account at Clooger.';
+
   constructor() { }
 
   ngOnInit(): void {

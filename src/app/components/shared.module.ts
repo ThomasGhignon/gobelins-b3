@@ -16,6 +16,7 @@ import { ServicesComponent } from './services/services.component';
 import { CtaComponent } from './cta/cta.component';
 import { TeamComponent } from './team/team.component';
 import { TeamNetworksComponent } from './team/team-networks/team-networks.component';
+import {CharLimitPipe} from "../pipes/char-limit.pipe";
 
 @NgModule({
   declarations: [
@@ -30,13 +31,15 @@ import { TeamNetworksComponent } from './team/team-networks/team-networks.compon
     ServicesComponent,
     CtaComponent,
     TeamComponent,
-    TeamNetworksComponent
+    TeamNetworksComponent,
+    CharLimitPipe
   ],
-  imports: [
-    CommonModule,
-    CarouselModule,
-    ScrollToModule.forRoot()
-  ],
+    imports: [
+        CommonModule,
+        CarouselModule,
+        ScrollToModule.forRoot(),
+
+    ],
   exports: [
     ClientComponent,
     SwitcherComponent,
@@ -48,7 +51,8 @@ import { TeamNetworksComponent } from './team/team-networks/team-networks.compon
     PricingComponent,
     ServicesComponent,
     CtaComponent,
-    TeamComponent
+    TeamComponent,
+    CharLimitPipe
   ]
 })
 export class SharedModule {
