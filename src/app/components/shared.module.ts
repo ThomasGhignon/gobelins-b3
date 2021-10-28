@@ -17,6 +17,7 @@ import { CtaComponent } from './cta/cta.component';
 import { TeamComponent } from './team/team.component';
 import { TeamNetworksComponent } from './team/team-networks/team-networks.component';
 import {CharLimitPipe} from "../pipes/char-limit.pipe";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -34,12 +35,13 @@ import {CharLimitPipe} from "../pipes/char-limit.pipe";
     TeamNetworksComponent,
     CharLimitPipe
   ],
-    imports: [
-        CommonModule,
-        CarouselModule,
-        ScrollToModule.forRoot(),
+  imports: [
+    CommonModule,
+    CarouselModule,
+    ScrollToModule.forRoot(),
+    ReactiveFormsModule,
 
-    ],
+  ],
   exports: [
     ClientComponent,
     SwitcherComponent,
