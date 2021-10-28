@@ -2,6 +2,7 @@ import {ChangeDetectorRef, Component, Inject, Input, OnInit, SimpleChanges} from
 import {TeamMemberModel} from "../../models/team-member-model";
 import {TeamMemberLinksModel} from "../../models/team-member-links-model";
 import {DOCUMENT} from "@angular/common";
+import * as faker from "faker";
 
 @Component({
   selector: 'app-team',
@@ -15,9 +16,11 @@ export class TeamComponent implements OnInit {
   @Input() toggleSocialLinks : boolean;
 
   constructor(@Inject(DOCUMENT) private readonly document: Document, private readonly changeDetectorRef: ChangeDetectorRef) {
+
+
     this.teamMemberList = [
       new TeamMemberModel({
-        img: '../../../../../assets/images/team/team-3.png',
+        img: faker.image.imageUrl(140,140,undefined,true,true),
         name:'@Rigoberto Valenza',
         content: 'You want customer to your store. Easily your coupans and has\n Clooger.',
         isActive: true,
@@ -28,7 +31,7 @@ export class TeamComponent implements OnInit {
         }),
       }),
       new TeamMemberModel({
-        img: '../../../../../assets/images/team/team-2.png',
+        img: faker.image.imageUrl(140,140,undefined,true,true),
         name:'@Donald Laughlin',
         content: 'You want customer to your store. Easily your coupans and has\n Clooger.',
         isActive: false,
@@ -39,7 +42,7 @@ export class TeamComponent implements OnInit {
         }),
       }),
       new TeamMemberModel({
-        img: '../../../../../assets/images/team/team-1.png',
+        img: faker.image.imageUrl(140,140,undefined,true,true),
         name:'@Venessa Smith',
         content: 'You want customer to your store. Easily your coupans and has\n Clooger.',
         isActive: true,
