@@ -9,6 +9,9 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   static readonly EMAIL = /^.+\@\S+\.\S+$/;
+  submitEvent = false;
+  validatedEvent = false;
+  successMessage:string;
 
   constructor() {
     this.contactForm = new FormGroup({
@@ -25,5 +28,20 @@ export class ContactComponent implements OnInit {
 
   submitForm() {
     console.log(this.contactForm.value);
+    this.submitEvent = true;
+
+    if (this.contactForm.valid){
+      this.validatedEvent = true;
+      this.showConfirmationMessage('Formulaire bien envoyé');
+    }
+  }
+  showConfirmationMessage(message: string){
+      this.successMessage = message;
+  }
+
+  resetForm() {
+    this.contactForm.reset();
+    this.validatedEvent = false;
+    this.submitEvent = false;
   }
 }
